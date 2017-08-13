@@ -12,6 +12,7 @@ const inc3 = require('../src/inc-3');
 const twice = require('../src/twice');
 const reverse = require('../src/reverse');
 const composeu = require('../src/composeu');
+const composeb = require('../src/composeb');
 const double = twice(add);
 const square = twice(mul);
 
@@ -102,5 +103,11 @@ describe('Write `reverse`, a function that reverses the arguments of a binary fu
 describe('Write a function `composeu` that takes two unary functions and returns a unary function that calls them both', () => {
   test('works', () => {
     expect(composeu(double, square)(5)).toEqual(100);
+  });
+});
+
+describe('Write a function `composeb` that takes two binary functions and returns a function that calls them both', () => {
+  test('works', () => {
+    expect(composeb(add, mul)(2, 3, 7)).toEqual(35);
   });
 });
